@@ -33,7 +33,7 @@ public class PastaBar {
 				int index = searchIndex(components, component);
 
 				if (wrongOrder(components, component)) {
-					System.out.println("Niste uneli odgovarajuci prilog! ");
+					wrongOrderMessages();
 				} else {
 					totalPrice = totalPrice + price(prices, index);
 				}
@@ -96,7 +96,6 @@ public class PastaBar {
 				return 0;
 			}
 			i++;
-
 		}
 		return -1;
 	}
@@ -116,12 +115,16 @@ public class PastaBar {
 		return discount;
 	}
 
-	public static void bill(double totalPrice) {
-		System.out.print("Vasa pasta iznosi " + totalPrice + " rsd.");
+		public static boolean wrongOrder(String[] components, String component) {
+		return (searchIndex(components, component) == -1);
 	}
 
-	public static boolean wrongOrder(String[] components, String component) {
-		return (searchIndex(components, component) == -1);
+	public static void wrongOrderMessages() {
+		System.out.println("Niste uneli odgovarajuci prilog! ");
+	}
+	
+	public static void bill(double totalPrice) {
+		System.out.print("Vasa pasta iznosi " + totalPrice + " rsd.");
 	}
 
 }
