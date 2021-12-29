@@ -14,6 +14,7 @@ public class PastaBar {
 		String phoneNumber;
 
 		wellcome();
+		menu();
 		addComponents();
 
 	}
@@ -31,6 +32,7 @@ public class PastaBar {
 	public static void wellcome() {
 
 		System.out.println("Izvolite !!");
+		System.out.println();
 	}
 
 	public static void addComponents() {
@@ -49,6 +51,27 @@ public class PastaBar {
 		}
 
 		return false;
+	}
+	
+	public static void menu() {
+		
+		System.out.println("Sastojci i cene:\r\n" + 
+				"Makarone - 50 rsd\r\n" + 
+				"Spagete - 60 rsd\r\n" + 
+				"Bolognese – 120 rsd\r\n" + 
+				"Curetina – 120 rsd\r\n" + 
+				"Govedja prsuta – 140 rsd\r\n" + 
+				"Slanina – 100 rsd\r\n" + 
+				"Piletina – 100 rsd\r\n" + 
+				"4 sira – 100 rsd\r\n" + 
+				"Dimljeni sir – 80 rsd\r\n" + 
+				"Parmezan – 50 rsd\r\n" + 
+				"Pavlaka – 80 rsd\r\n" + 
+				"Pesto sos – 80 rsd\r\n" + 
+				"Napolitana – 80 rsd\r\n" + 
+				"Povrce mix – 50 rsd\r\n" + 
+				"Pecurke – 50 rsd\r\n" + 
+				"Kutija – 20 rsd\r\n");
 	}
 
 }
