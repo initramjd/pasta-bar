@@ -28,32 +28,29 @@ public class PastaBar {
 
 			addComponent();
 			component = s.nextLine();
-			if (!isOrderFinish(component)) {	
+			if (!isOrderFinish(component)) {
 
-			int index = searchIndex(components, component);
+				int index = searchIndex(components, component);
 
-			if (searchIndex(components, component) == -1) {
-				System.out.println("Niste uneli odgovarajuci prilog! ");
-			} else {
-
-				totalPrice = totalPrice + price(prices, index);
+				if (wrongOrder(components, component)) {
+					System.out.println("Niste uneli odgovarajuci prilog! ");
+				} else {
+					totalPrice = totalPrice + price(prices, index);
+				}
 			}
 		}
-		}
-
 
 		addPhoneNumber();
 		phoneNumber = s.next();
-		 if (vipCheck(phoneNumbers, phoneNumber)) {			 
-			 totalPrice = totalPrice - discount(discount, totalPrice);
-			 bill(totalPrice);			 
-			 
-		 } else {
-			 
-			 bill(totalPrice);	
-		 }
-		 
-		 
+		if (vipCheck(phoneNumbers, phoneNumber)) {
+			totalPrice = totalPrice - discount(discount, totalPrice);
+			bill(totalPrice);
+
+		} else {
+
+			bill(totalPrice);
+		}
+
 	}
 
 	public static void wellcome() {
@@ -99,7 +96,7 @@ public class PastaBar {
 				return 0;
 			}
 			i++;
-			
+
 		}
 		return -1;
 	}
@@ -116,16 +113,21 @@ public class PastaBar {
 		return price;
 
 	}
-	
-	public static double discount(double discount, double totalPrice) {	
-		
+
+	public static double discount(double discount, double totalPrice) {
+
 		discount = (totalPrice * discount / 100);
-		return discount;		
+		return discount;
 	}
-	
-	public static void bill(double totalPrice) {	
-		
-		System.out.print("Vasa pasta iznosi " +  totalPrice + " rsd.");
+
+	public static void bill(double totalPrice) {
+
+		System.out.print("Vasa pasta iznosi " + totalPrice + " rsd.");
+	}
+
+	public static boolean wrongOrder(String[] components, String component) {
+
+		return (searchIndex(components, component) == -1);
 	}
 
 }
