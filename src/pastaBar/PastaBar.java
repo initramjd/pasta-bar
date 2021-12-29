@@ -10,6 +10,9 @@ public static void main(String[] args) {
 	int[] price = {50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20};
 	
 	String[] phoneNumber = {"0631111111", "063222222", "063333333", "064444444", "065555555", "066666666"};
+	
+	
+	wellcome();
 		
 	}
 	
@@ -22,6 +25,11 @@ public static void main(String[] args) {
 	public static boolean isRegularCustomer(String[] phoneNumbers, String phone) {
 		
 		return false;
+	}
+	
+	public static void wellcome() {
+		
+		System.out.println("Izvolite !!");		
 	}
 
 }
