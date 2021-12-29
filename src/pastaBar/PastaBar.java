@@ -13,6 +13,7 @@ public static void main(String[] args) {
 	
 	
 	wellcome();
+	addComponents();
 		
 	}
 	
@@ -30,6 +31,11 @@ public static void main(String[] args) {
 	public static void wellcome() {
 		
 		System.out.println("Izvolite !!");		
+	}
+	
+public static void addComponents() {
+		
+		System.out.print("Izaberite sastojak za pastu: ");		
 	}
 
 }
