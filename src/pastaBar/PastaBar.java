@@ -19,6 +19,7 @@ public class PastaBar {
 		String phoneNumber;
 		int price = 0;
 		int totalPrice = 0;
+		int discount = 10;
 
 		wellcome();
 		menu();
@@ -103,6 +104,11 @@ public class PastaBar {
 		int price = prices[index];
 		return price;
 
+	}
+	
+	public static double discount(int discount, int totalPrice) {		
+		discount = (totalPrice * discount / 100);
+		return discount;		
 	}
 
 }
