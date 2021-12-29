@@ -107,7 +107,6 @@ public class PastaBar {
 	public static double price(double[] prices, int index) {
 		double price = prices[index];
 		return price;
-
 	}
 
 	public static double discount(double discount, double totalPrice) {
