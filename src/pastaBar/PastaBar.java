@@ -102,31 +102,25 @@ public class PastaBar {
 	}
 
 	public static boolean isOrderFinish(String component) {
-
 		return (component.equals("Poruci"));
-
 	}
 
 	public static double price(double[] prices, int index) {
-
 		double price = prices[index];
 		return price;
 
 	}
 
 	public static double discount(double discount, double totalPrice) {
-
 		discount = (totalPrice * discount / 100);
 		return discount;
 	}
 
 	public static void bill(double totalPrice) {
-
 		System.out.print("Vasa pasta iznosi " + totalPrice + " rsd.");
 	}
 
 	public static boolean wrongOrder(String[] components, String component) {
-
 		return (searchIndex(components, component) == -1);
 	}
 
