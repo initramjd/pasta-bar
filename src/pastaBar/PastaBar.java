@@ -12,14 +12,14 @@ public class PastaBar {
 				"4 sira", "Dimljeni sir", "Parmezan", "Pavlaka", "Pesto sos", "Napolitana", "Povrce mix", "Pecurke",
 				"Kutija" };
 
-		int[] prices = { 50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20 };
+		double[] prices = { 50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20 };
 
 		String component = "";
 		String[] phoneNumbers = { "0631111111", "063222222", "063333333", "064444444", "065555555", "066666666" };
 		String phoneNumber;
 		int price = 0;
-		int totalPrice = 0;
-		int discount = 10;
+		double totalPrice = 0;
+		double discount = 10;
 
 		wellcome();
 		menu();
@@ -27,7 +27,8 @@ public class PastaBar {
 		while (!isOrderFinish(component)) {
 
 			addComponent();
-			component = s.next();
+			component = s.nextLine();
+			if (!isOrderFinish(component)) {	
 
 			int index = searchIndex(components, component);
 
@@ -38,11 +39,21 @@ public class PastaBar {
 				totalPrice = totalPrice + price(prices, index);
 			}
 		}
+		}
 
 
 		addPhoneNumber();
 		phoneNumber = s.next();
-		vipCheck(phoneNumbers, phoneNumber);
+		 if (vipCheck(phoneNumbers, phoneNumber)) {			 
+			 totalPrice = totalPrice - discount(discount, totalPrice);
+			 bill(totalPrice);			 
+			 
+		 } else {
+			 
+			 bill(totalPrice);	
+		 }
+		 
+		 
 	}
 
 	public static void wellcome() {
@@ -99,16 +110,22 @@ public class PastaBar {
 
 	}
 
-	public static int price(int[] prices, int index) {
+	public static double price(double[] prices, int index) {
 
-		int price = prices[index];
+		double price = prices[index];
 		return price;
 
 	}
 	
-	public static double discount(int discount, int totalPrice) {		
+	public static double discount(double discount, double totalPrice) {	
+		
 		discount = (totalPrice * discount / 100);
 		return discount;		
+	}
+	
+	public static void bill(double totalPrice) {	
+		
+		System.out.print("Vasa pasta iznosi " +  totalPrice + " rsd.");
 	}
 
 }
